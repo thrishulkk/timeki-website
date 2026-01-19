@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join your team on Timeki - GPS-verified time tracking made simple">
+    <title>Team Invitation - Timeki</title>
+    <link rel="icon" type="image/png" href="/assets/images/timeki-logo.png">
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Header (matching landing page) */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.logo-image {
+    width: 40px;
+    height: 40px;
+}
+.logo-text {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white;
+}
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+nav a:hover, nav a:focus {
+    color: #3498db;
+}
+.nav-signin {
+    color: #3498db !important;
+    font-weight: 600;
+}
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 50px;
+    text-align: center;
+}
+/* Hero Section */
+.invitation-header {
+    margin-bottom: 40px;
+}
+.invitation-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
+.invitation-header h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+.invitation-header .subtitle {
+    font-size: 1.1em;
+    color: #666;
+}
+/* QR Code Section */
+.qr-section {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px 0;
+}
+#qrcode {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+}
+.qr-instruction {
+    color: #64748b;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+/* App Store Buttons */
+.download-section {
+    margin: 30px 0;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+.download-text {
+    color: #64748b;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+.app-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.app-store-badge {
+    transition: transform 0.3s;
+    display: inline-block;
+}
+.app-store-badge:hover {
+    transform: translateY(-3px);
+}
+.app-store-badge img {
+    height: 50px;
+    width: auto;
+}
+/* Open App Button */
+.open-app-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+.open-app-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+/* Error Message */
+.error-container {
+    padding: 40px 30px;
+}
+.error-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: #fef2f2;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    font-size: 40px;
+}
+.error-container h1 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+.error-container p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.error-container .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.error-container .btn:hover {
+    background-color: #2980b9;
+}
+/* Footer (matching landing page) */
+.footer-separator {
+    height: 2px;
+    background: #1a252f;
+    margin-top: auto;
+}
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+footer p {
+    margin-bottom: 15px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer a:hover, footer a:focus {
+    color: #3498db;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+    .container {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+    .invitation-header h1 {
+        font-size: 1.6em;
+    }
+    .invitation-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    .qr-section {
+        padding: 20px;
+    }
+    #qrcode {
+        padding: 15px;
+    }
+    .app-store-badge img {
+        height: 45px;
+    }
+    .open-app-button {
+        padding: 14px 30px;
+        font-size: 1em;
+    }
+}
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 40px;
+}
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border: 4px solid #e2e8f0;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="https://timeki.app" class="logo-container" aria-label="Timeki Home">
+                <img src="/assets/images/timeki-logo.png" alt="Timeki Logo" class="logo-image">
+                <div class="logo-text">Timeki</div>
+            </a>
+            <nav role="navigation">
+                <a href="https://timeki.app#pricing">Pricing</a>
+                <a href="https://timeki.app#download">Download</a>
+                <a href="https://timeki.app/app" class="nav-signin">Sign In</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading your invitation...</p>
+            </div>
+            <!-- Error State -->
+            <div id="errorState" class="error-container" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h1>Invalid or Expired Invitation</h1>
+                <p>This invitation link is no longer valid. It may have expired or already been used.</p>
+                <p>Please contact your manager for a new invitation link.</p>
+                <a href="https://timeki.app" class="btn">Go to Timeki Home</a>
+            </div>
+            <!-- Valid Invitation State -->
+            <div id="validState" style="display: none;">
+                <div class="invitation-header">
+                    <div class="invitation-icon">👋</div>
+                    <h1>You've Been Invited!</h1>
+                    <p class="subtitle">Join your team on Timeki</p>
+                </div>
+                <!-- Open App Button (primary action) -->
+                <a href="#" id="openAppLink" class="open-app-button">Open in Timeki App</a>
+                <!-- QR Code Section -->
+                <div class="qr-section">
+                    <div id="qrcode"></div>
+                    <p class="qr-instruction">Scan this code with your phone to open the invitation</p>
+                </div>
+                <!-- Download Section -->
+                <div class="download-section">
+                    <p class="download-text">Don't have the app yet? Download it now:</p>
+                    <div class="app-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.mycompany.timeki.prod" class="app-store-badge" target="_blank" rel="noopener">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                        </a>
+                        <a href="https://testflight.apple.com/join/MMWwsgTw" class="app-store-badge" target="_blank" rel="noopener">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <div class="footer-separator"></div>
+    <footer>
+        <p>&copy; 2025 Byond Bytes Pty Ltd. All rights reserved.</p>
+        <p>
+            <a href="https://timeki.app">Home</a> |
+            <a href="https://timeki.app/help">Help</a> |
+            <a href="https://timeki.app/privacy">Privacy</a> |
+            <a href="https://timeki.app/terms">Terms</a> |
+            <a href="mailto:support@timeki.app">Support</a>
+        </p>
+    </footer>
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+   
+    <!-- Main Script -->
+    <script>
+        // Get token from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+       
+        // DOM elements
+        const loadingState = document.getElementById('loadingState');
+        const errorState = document.getElementById('errorState');
+        const validState = document.getElementById('validState');
+        const openAppLink = document.getElementById('openAppLink');
+        // Function to show error
+        function showError() {
+            loadingState.style.display = 'none';
+            errorState.style.display = 'block';
+            validState.style.display = 'none';
+        }
+        // Function to show valid invitation
+        function showValidInvitation(deepLink) {
+            loadingState.style.display = 'none';
+            errorState.style.display = 'none';
+            validState.style.display = 'block';
+            // Set open app button href
+            openAppLink.href = deepLink;
+           
+            // Generate QR code
+            new QRCode(document.getElementById('qrcode'), {
+                text: deepLink,
+                width: 200,
+                height: 200,
+                colorDark: '#2c3e50',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+           
+            // Auto-open app on mobile devices
+            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                setTimeout(() => {
+                    window.location.href = deepLink;
+                }, 500);
+            }
+        }
+        // Main logic
+        if (!token || token.trim() === '') {
+            showError();
+        } else {
+            // Create deep link
+            const deepLink = `timeki://invite?token=${encodeURIComponent(token)}`;
+           
+            // Show valid invitation immediately
+            // In production, you might want to validate the token via API first
+            showValidInvitation(deepLink);
+        }
+    </script>
+</body>
+</html>

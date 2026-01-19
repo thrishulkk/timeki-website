@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Timeki Quick-Start Guide – Get started with GPS-verified time tracking in 7 simple steps">
+    <meta name="keywords" content="Timeki quick start, time tracking setup, employee time clock guide">
+    <title>Timeki Quick-Start Guide (7 Steps)</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif; line-height:1.6; color:#333; background:#f8f9fa; }
+        .container { max-width:900px; margin:0 auto; padding:20px; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+        
+        /* Header Navigation */
+        header { background:#2c3e50; color:#fff; padding:20px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+        .header-content { max-width:900px; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center; }
+        .logo-container { display:flex; align-items:center; gap:12px; text-decoration:none; }
+        .logo-image { width:40px; height:40px; }
+        .logo-text { font-size:1.8em; font-weight:700; color:white; }
+        nav { display:flex; gap:30px; align-items:center; }
+        nav a { color:white; text-decoration:none; font-weight:500; transition:color 0.3s; }
+        nav a:hover, nav a:focus { color:#3498db; outline:2px solid #3498db; outline-offset:4px; }
+        .nav-signin { color:#3498db !important; font-weight:600; }
+        .mobile-menu-toggle { display:none; background:none; border:none; color:white; font-size:28px; cursor:pointer; padding:8px; }
+        
+        /* Page Title Section */
+        .page-title { background:#2c3e50; color:#fff; padding:40px 20px; text-align:center; }
+        .page-title h1 { font-size:1.9em; margin-bottom:8px; }
+        .subtitle { opacity:0.9; font-size:1.1em; }
+        
+        .content { padding:30px 20px; }
+        .quick-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:25px 0; }
+        .card { background:#f8f9fa; padding:16px; border-radius:8px; text-align:center; border:2px solid #dee2e6; transition:0.3s; cursor:pointer; }
+        .card:hover { border-color:#3498db; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+        .card:focus { outline:3px solid #3498db; outline-offset:2px; border-color:#3498db; }
+        .card h3 { color:#2c3e50; margin-bottom:6px; font-size:1.05em; }
+        .section { margin-bottom:35px; }
+        .section h2 { color:#2c3e50; font-size:1.55em; margin-bottom:15px; border-bottom:3px solid #3498db; padding-bottom:8px; }
+        .faq { background:#f8f9fa; padding:16px; margin-bottom:12px; border-radius:5px; border-left:4px solid #3498db; }
+        .faq h3 { color:#2c3e50; margin-bottom:8px; font-size:1.1em; }
+        .step-list { background:#fff; padding:12px; border-left:3px solid #27ae60; margin:12px 0; border-radius:4px; font-size:0.95em; }
+        .step-list ol { margin-left:18px; }
+        .step-list li { margin-bottom:7px; }
+        .tip-box { background:#d4edda; border-left:4px solid #28a745; padding:12px; margin:12px 0; border-radius:4px; font-size:0.92em; }
+        .tip-box strong { color:#155724; }
+        .warning-box { background:#fff3cd; border-left:4px solid #ffc107; padding:12px; margin:12px 0; border-radius:4px; font-size:0.92em; }
+        .warning-box strong { color:#856404; }
+        .download-btn { display:inline-block; background:#3498db; color:#fff; padding:7px 13px; border-radius:6px; font-weight:600; margin:5px 2px; text-decoration:none; font-size:0.9em; }
+        .download-btn.android { background:#3ddc84; }
+        .download-btn.ios { background:#000; }
+        .contact { background:#e3f2fd; padding:25px; border-radius:8px; text-align:center; margin-top:30px; }
+        .contact a { color:#1976d2; font-weight:600; font-size:1.1em; text-decoration:none; }
+        .contact a:hover { text-decoration:underline; }
+        footer { background:#2c3e50; color:#fff; text-align:center; padding:15px; margin-top:30px; font-size:0.9em; }
+        footer a { color:white; text-decoration:none; transition:color 0.3s; }
+        footer a:hover { color:#3498db; }
+        
+        @media (max-width:768px) { 
+            nav { display:none; position:absolute; top:70px; left:0; right:0; background:#2c3e50; flex-direction:column; padding:20px; gap:15px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000; }
+            nav.active { display:flex; }
+            .mobile-menu-toggle { display:block; }
+            .page-title h1 { font-size:1.5em; } 
+            .quick-links { grid-template-columns:1fr; } 
+            .download-btn { display:block; margin:8px 0; } 
+            .card h3 { font-size:1em; }
+            .section h2 { font-size:1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-container" aria-label="Timeki Home">
+                <img src="/timeki-logo.png" alt="Timeki Logo" class="logo-image">
+                <div class="logo-text">Timeki</div>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav id="mainNav" role="navigation">
+                <a href="/">Home</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/#download">Download</a>
+                <a href="https://timeki.app/app" class="nav-signin">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-title">
+        <h1>Timeki Quick-Start Guide</h1>
+        <p class="subtitle">7 simple steps to manage time, shifts, and payroll</p>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <!-- 7 QUICK LINKS -->
+            <div class="quick-links">
+                <div class="card" onclick="scrollToSection('signup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('signup');}">
+                    <h3>1. Sign Up</h3>
+                    <p>Create account</p>
+                </div>
+                <div class="card" onclick="scrollToSection('invite')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('invite');}">
+                    <h3>2. Invite Team</h3>
+                    <p>Add employees</p>
+                </div>
+                <div class="card" onclick="scrollToSection('geofence')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('geofence');}">
+                    <h3>3. Add Sites</h3>
+                    <p>Geofenced jobs</p>
+                </div>
+                <div class="card" onclick="scrollToSection('schedule')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('schedule');}">
+                    <h3>4. Schedule</h3>
+                    <p>Create shifts</p>
+                </div>
+                <div class="card" onclick="scrollToSection('clock')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('clock');}">
+                    <h3>5. Clock In/Out</h3>
+                    <p>Track time</p>
+                </div>
+                <div class="card" onclick="scrollToSection('review')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('review');}">
+                    <h3>6. Review Time</h3>
+                    <p>Approve entries</p>
+                </div>
+                <div class="card" onclick="scrollToSection('payroll')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('payroll');}">
+                    <h3>7. Export Payroll</h3>
+                    <p>Get CSV</p>
+                </div>
+            </div>
+
+            <!-- 1. SIGN UP -->
+            <div class="section" id="signup">
+                <h2>1. Create Your Account (Managers)</h2>
+                <div class="faq">
+                    <h3>Sign Up as Manager</h3>
+                    <p><strong>Web App (Recommended for setup):</strong> <a href="https://timeki.app/app" target="_blank" style="color:#3498db;">Visit timeki.app/app</a></p>
+                    <p><strong>Mobile Apps:</strong></p>
+                    <a href="https://apps.apple.com/sa/app/timeki-geofence-time-tracker/id6753854655" class="download-btn ios" target="_blank">Download for iOS</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.timeki.prod" class="download-btn android" target="_blank">Download for Android</a>
+                    <div class="step-list">
+                        <ol>
+                            <li>Visit <a href="https://timeki.app/app" target="_blank">https://timeki.app/app</a></li>
+                            <li>Tap <strong>Sign Up</strong></li>
+                            <li>Enter: <strong>Email, Password, Organization Name, Industry, Company Size</strong></li>
+                            <li>Optional: Add <strong>Phone</strong> and <strong>Address</strong></li>
+                            <li>Tap <strong>Create Manager Account</strong></li>
+                        </ol>
+                    </div>
+                    <div class="tip-box"><strong>Tip:</strong> You're now the <strong>Owner/Manager</strong> and can invite employees. You'll see a Getting Started guide to help you set up your team.</div>
+                </div>
+            </div>
+
+            <!-- 2. INVITE TEAM -->
+            <div class="section" id="invite">
+                <h2>2. Invite Employees</h2>
+                <div class="faq">
+                    <h3>Generate & Share Invite Link</h3>
+                    <div class="step-list">
+                        <ol>
+                            <li>Go to <strong>Manage → Team Members</strong></li>
+                            <li>Tap <strong>+ Invite Team Member</strong></li>
+                            <li>Enter <strong>Employee Name</strong> (required)</li>
+                            <li>Optional: Enter <strong>Hourly Rate</strong></li>
+                            <li>Tap <strong>Generate Invite Link</strong></li>
+                            <li>Copy the link and send it to your team member via:</li>
+                            <ul style="margin-left:20px; margin-top:5px;">
+                                <li>Text message / SMS</li>
+                                <li>Email</li>
+                                <li>WhatsApp or other messaging apps</li>
+                            </ul>
+                        </ol>
+                    </div>
+                    <div class="tip-box"><strong>Pro tip:</strong> The link automatically creates their account when they tap it. They just need to set a password and download the mobile app.</div>
+                </div>
+            </div>
+
+            <!-- 3. ADD GEOFENCED SITES -->
+            <div class="section" id="geofence">
+                <h2>3. Add Geofenced Job Sites</h2>
+                <div class="faq">
+                    <h3>Create a Job Site</h3>
+                    <div class="step-list">
+                        <ol>
+                            <li>Tap <strong>Manage → Job Sites</strong></li>
+                            <li>Tap <strong>"+ Add Site"</strong></li>
+                            <li>Enter <strong>Site Name</strong> and <strong>Address</strong></li>
+                            <li>Choose <strong>Site Color</strong></li>
+                            <li>Adjust <strong>Geofence Radius</strong> (50–500m)</li>
+                            <li>Tap <strong>"Add Job Site"</strong></li>
+                        </ol>
+                    </div>
+                    <div class="tip-box"><strong>Tip:</strong> Set larger radius (200-500m) for large sites like construction zones. Use smaller radius (50-100m) for specific addresses.</div>
+                    <div class="warning-box"><strong>Optional:</strong> If you don't need location tracking, go to <strong>Manage</strong> and toggle <strong>Require Geofence</strong> to <strong>OFF</strong>. Employees can then clock in from anywhere.</div>
+                </div>
+            </div>
+
+            <!-- 4. SCHEDULE SHIFTS -->
+            <div class="section" id="schedule">
+                <h2>4. Create & Assign Shifts</h2>
+                <div class="faq">
+                    <h3>Schedule a Shift</h3>
+                    <div class="step-list">
+                        <ol>
+                            <li>Tap <strong>Schedule</strong> tab</li>
+                            <li>Tap <strong>"+ Add Shift"</strong></li>
+                            <li>Select <strong>Job Site</strong>, <strong>Date</strong>, <strong>Start/End Time</strong></li>
+                            <li>Tap <strong>Assign Team Members</strong></li>
+                            <li>Check employees → Tap <strong>Assign All</strong></li>
+                            <li>Toggle <strong>Repeat</strong> for recurring shifts (Mon-Fri, etc.)</li>
+                        </ol>
+                    </div>
+                    <div class="tip-box"><strong>Tip:</strong> Use the <strong>Repeat</strong> feature for weekly schedules — saves time!</div>
+                </div>
+            </div>
+
+            <!-- 5. CLOCK IN/OUT -->
+            <div class="section" id="clock">
+                <h2>5. Clock In, Take Breaks, Clock Out</h2>
+                <div class="faq">
+                    <h3>For Employees</h3>
+                    <p><strong>Employees must download the mobile app and log in with their account:</strong></p>
+                    <a href="https://apps.apple.com/sa/app/timeki-geofence-time-tracker/id6753854655" class="download-btn ios" target="_blank">iOS App</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.timeki.prod" class="download-btn android" target="_blank">Android App</a>
+                    
+                    <div class="step-list">
+                        <ol>
+                            <li>Open the Timeki app</li>
+                            <li>Go to the <strong>Tracker</strong> tab</li>
+                            <li>Ensure you're <strong>within the job site geofence</strong> (if required)</li>
+                            <li>Select <strong>Activity</strong> and <strong>Client</strong> (if Activity Tracking is enabled)</li>
+                            <li>Tap the large green <strong>"Punch In"</strong> button</li>
+                            <li><strong>Start Break</strong> when needed (time auto-deducted)</li>
+                            <li><strong>End Break</strong> to resume work</li>
+                            <li>Tap red <strong>"Punch Out"</strong> when done</li>
+                        </ol>
+                    </div>
+                    <div class="tip-box"><strong>Tip:</strong> If you can't punch in, tap <strong>Refresh Location</strong> or check if you're inside the geofence.</div>
+                </div>
+                
+                <div class="faq">
+                    <h3>Manual Time Entry</h3>
+                    <p>For missed punches or adjustments:</p>
+                    <div class="step-list">
+                        <ol>
+                            <li>Go to <strong>Tracker</strong> tab</li>
+                            <li>Tap <strong>"+ Add Manual Time Entry"</strong></li>
+                            <li>Enter start/end time, breaks, job site, activity, client, notes</li>
+                            <li>Tap <strong>"Add Entry"</strong></li>
+                        </ol>
+                    </div>
+                    <p><em>Requires manager approval before payroll export.</em></p>
+                </div>
+            </div>
+
+            <!-- 6. REVIEW & APPROVE TIME -->
+            <div class="section" id="review">
+                <h2>6. Review & Approve Time Entries</h2>
+                <div class="faq">
+                    <h3>Manager Approval</h3>
+                    <div class="step-list">
+                        <ol>
+                            <li>Tap <strong>Timesheets</strong></li>
+                            <li>View entries by employee/date</li>
+                            <li>Tap <strong>Approve</strong> or <strong>Edit</strong> if needed</li>
+                            <li>Add notes if required</li>
+                        </ol>
+                    </div>
+                    <div class="warning-box"><strong>Important:</strong> Only <strong>approved entries</strong> appear in payroll export. Review entries weekly to stay on top of payroll.</div>
+                </div>
+            </div>
+
+            <!-- 7. EXPORT PAYROLL -->
+            <div class="section" id="payroll">
+                <h2>7. Export Payroll (CSV)</h2>
+                <div class="faq">
+                    <h3>Generate Payroll Report</h3>
+                    <div class="step-list">
+                        <ol>
+                            <li>Tap <strong>Timesheets</strong></li>
+                            <li>Select <strong>date range</strong></li>
+                            <li>Tap <strong>Export Payroll CSV</strong></li>
+                        </ol>
+                    </div>
+                    <p>CSV includes: <strong>Name, Total Hours, Hourly Rate, Total Pay, Activities, Clients</strong></p>
+                    <div class="tip-box"><strong>Tip:</strong> Import the CSV directly into your payroll software or send to your accountant.</div>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="contact">
+                <h2>Need Help?</h2>
+                <p>Email us — we reply within 24 hours on business days</p>
+                <p style="margin-top:15px;"><a href="mailto:support@timeki.app">support@timeki.app</a></p>
+                <p style="margin-top:10px;"><a href="/help.html" style="color:#3498db;">View Full Help Guide →</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Byond Bytes Pty Ltd. All rights reserved.</p>
+        <p style="margin-top:8px;">
+            <a href="/">Home</a> |
+            <a href="/help.html">Help</a> |
+            <a href="/privacy.html">Privacy</a> |
+            <a href="/terms.html">Terms</a> |
+            <a href="/quickstartguide.html">Quick Start</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const isExpanded = nav.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnToggle = toggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+
+</body>
+</html>

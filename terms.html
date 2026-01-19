@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Timeki Terms of Use – Legal terms and conditions for using our time tracking service">
+    <meta name="keywords" content="Timeki terms of use, terms and conditions, legal agreement">
+    <title>Terms of Use - Timeki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a:focus {
+            color: #3498db;
+            outline: 2px solid #3498db;
+            outline-offset: 4px;
+        }
+        
+        .nav-signin {
+            color: #3498db !important;
+            font-weight: 600;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Page Title Section */
+        .page-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .last-updated {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 20px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .contact-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #2c3e50;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .page-title h1 {
+                font-size: 1.5em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-container" aria-label="Timeki Home">
+                <img src="/timeki-logo.png" alt="Timeki Logo" class="logo-image">
+                <div class="logo-text">Timeki</div>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav id="mainNav" role="navigation">
+                <a href="/">Home</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/#download">Download</a>
+                <a href="https://timeki.app/app" class="nav-signin">Sign In</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="page-title">
+        <h1>Terms of Use</h1>
+        <p class="last-updated">Last updated: December 31, 2025</p>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <p>These Terms of Use ("Terms") govern your access to and use of the Timeki mobile app, website, and related services (the "Service"), operated by Byond Bytes Pty Ltd ("Timeki", "we", "our", "us").</p>
+            
+            <p><strong>By using the Service, you agree to these Terms. If you don't agree, please stop using the Service.</strong></p>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using Timeki, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as our Privacy Policy. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.</p>
+            
+            <h2>2. Description of Service</h2>
+            <p>Timeki is a time tracking and workforce management application that enables:</p>
+            <ul>
+                <li>Managers and business owners to track employee work hours, manage schedules, and monitor job sites</li>
+                <li>Employees to clock in/out, track breaks, and view their schedules</li>
+                <li>Geofencing capabilities to verify location-based time tracking</li>
+                <li>Time entry review, approval, and export for payroll purposes</li>
+            </ul>
+            
+            <h2>3. Free Trial and Subscriptions</h2>
+            
+            <h3>3.1 Free Trial</h3>
+            <p>Managers and business owners can try Timeki free for 30 days. During the trial period, you have access to all features of the Service. The free trial is available to new users only and may be limited to one trial per user or organization.</p>
+            
+            <h3>3.2 Paid Subscriptions</h3>
+            <p>After the free trial period ends, continued use of the Service requires a paid subscription ("Subscription"). Subscriptions are available through the Apple App Store or Google Play Store and are subject to their respective terms and conditions.</p>
+            
+            <p>Subscription features include:</p>
+            <ul>
+                <li>Unlimited time tracking</li>
+                <li>Team member invitations</li>
+                <li>Job site management with geofencing</li>
+                <li>Shift scheduling and management</li>
+                <li>Time review and approval workflows</li>
+                <li>CSV export for payroll</li>
+            </ul>
+            
+            <h3>3.3 Automatic Renewal</h3>
+            <p>Subscriptions automatically renew each billing period (monthly or yearly) unless cancelled before the renewal date. You can cancel anytime through your Apple App Store or Google Play Store account settings. Cancellation takes effect at the end of the current billing period.</p>
+            
+            <h3>3.4 Payment</h3>
+            <p>All payments are processed through the Apple App Store or Google Play Store. You must provide a valid payment method and authorize us or the app store provider to charge all subscription fees to it. If a payment fails, we may suspend your access to paid features until payment is completed.</p>
+            
+            <h2>4. Fee Changes</h2>
+            <p>We reserve the right to modify subscription prices at any time. For existing subscribers, price changes will take effect at the start of your next billing cycle after we provide you with reasonable advance notice (at least 30 days). If you don't agree with a price change, you may cancel your subscription before the change takes effect.</p>
+            
+            <h2>5. Refunds</h2>
+            <p>For purchases made directly through our website, we follow the refund process of our payment provider.</p>
+            
+            <p>Customers may cancel their purchase and request a refund within 14 days of purchase, in line with our payment provider's Buyer Terms. Where eligible, refunds will be processed to the original payment method.</p>
+            
+            <p>For purchases made through the Apple App Store or Google Play Store, refunds are handled according to the respective store's refund policies.</p>
+            
+            <p>This refund policy does not limit or exclude your rights under Australian Consumer Law. You may be entitled to a refund if:</p>
+            <ul>
+                <li>The Service has a major problem or failure</li>
+                <li>We provided misleading information about the Service</li>
+                <li>Other consumer guarantee rights are not met</li>
+            </ul>
+            
+            <h2>6. User Accounts</h2>
+            
+            <h3>6.1 Account Creation</h3>
+            <p>To use Timeki, you must create an account. When creating an account, you must provide accurate, current, and complete information. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+            
+            <h3>6.2 Account Types</h3>
+            <ul>
+                <li><strong>Manager/Owner Accounts:</strong> Can create job sites, invite team members, manage schedules, review and approve time entries, and export data.</li>
+                <li><strong>Employee Accounts:</strong> Can clock in/out, view schedules, track breaks, and submit time entries for approval.</li>
+            </ul>
+            
+            <h3>6.3 Account Security</h3>
+            <p>You must:</p>
+            <ul>
+                <li>Keep your password secure and confidential</li>
+                <li>Notify us immediately if you suspect unauthorized use of your account</li>
+                <li>Not share your account credentials with others</li>
+                <li>Log out from shared devices</li>
+            </ul>
+            
+            <p>We are not liable for any loss or damage arising from your failure to maintain account security.</p>
+            
+            <h2>7. Your Content and Data</h2>
+            
+            <h3>7.1 Content Ownership</h3>
+            <p>You retain all ownership rights to the content and data you upload to Timeki ("Your Content"), including:</p>
+            <ul>
+                <li>Time entries and work records</li>
+                <li>Job site information</li>
+                <li>Project and task details</li>
+                <li>Employee information</li>
+                <li>Schedule data</li>
+                <li>Photos and media (future feature)</li>
+            </ul>
+            
+            <h3>7.2 License to Use Your Content</h3>
+            <p>By uploading Your Content to Timeki, you grant us a limited, worldwide, non-exclusive license to use, store, display, and distribute Your Content solely for the purpose of operating and improving the Service. This includes:</p>
+            <ul>
+                <li>Storing Your Content securely on our servers</li>
+                <li>Displaying Your Content within the app to authorized users</li>
+                <li>Processing Your Content to provide features like reports and exports</li>
+                <li>Creating backups of Your Content</li>
+            </ul>
+            
+            <h3>7.3 Content Responsibilities</h3>
+            <p>You are solely responsible for Your Content and must ensure that:</p>
+            <ul>
+                <li>You have the right to upload and share it</li>
+                <li>It does not violate any laws or third-party rights</li>
+                <li>It does not contain malicious code or viruses</li>
+                <li>It is accurate and not misleading</li>
+            </ul>
+            
+            <h3>7.4 Content Removal</h3>
+            <p>We reserve the right to remove or disable access to any Content that we believe, in our sole discretion:</p>
+            <ul>
+                <li>Violates these Terms or our policies</li>
+                <li>Infringes on third-party rights</li>
+                <li>Is illegal, harmful, or inappropriate</li>
+                <li>Poses a security or technical risk</li>
+            </ul>
+            
+            <h2>8. Acceptable Use</h2>
+            
+            <h3>8.1 Permitted Use</h3>
+            <p>You may use Timeki only for lawful purposes and in accordance with these Terms. The Service is intended for workforce time tracking and management.</p>
+            
+            <h3>8.2 Prohibited Activities</h3>
+            <p>You must not:</p>
+            <ul>
+                <li>Violate any applicable laws or regulations</li>
+                <li>Infringe on intellectual property or other rights of others</li>
+                <li>Transmit malicious code, viruses, or harmful content</li>
+                <li>Attempt to gain unauthorized access to the Service or other users' accounts</li>
+                <li>Interfere with or disrupt the Service or servers</li>
+                <li>Use automated tools to access the Service (e.g., bots, scrapers)</li>
+                <li>Reverse engineer, decompile, or disassemble the Service</li>
+                <li>Resell or redistribute the Service without authorization</li>
+                <li>Use the Service to harass, abuse, or harm others</li>
+                <li>Submit false or fraudulent time entries</li>
+                <li>Circumvent geofencing or location verification features</li>
+                <li>Create multiple accounts to abuse free trial offers</li>
+            </ul>
+            
+            <h2>9. Geofencing and Location Services</h2>
+            <p>Timeki uses GPS location data to verify that employees are within designated job site boundaries when clocking in or out. By using these features, you:</p>
+            <ul>
+                <li>Consent to the collection of location data as described in our Privacy Policy</li>
+                <li>Acknowledge that location accuracy depends on device GPS capabilities and environmental factors</li>
+                <li>Agree not to falsify or manipulate location data</li>
+                <li>Understand that managers may view location data associated with time entries</li>
+            </ul>
+            
+            <p>Employers using geofencing features must comply with all applicable workplace privacy laws and inform employees about location tracking.</p>
+            
+            <h2>10. Intellectual Property</h2>
+            
+            <h3>10.1 Our Rights</h3>
+            <p>All materials in the Service, including software, text, graphics, logos, icons, images, audio clips, and downloads, are the property of Byond Bytes Pty Ltd or our licensors and are protected by Australian and international copyright, trademark, and other intellectual property laws.</p>
+            
+            <h3>10.2 Limited License</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+                <li>Access and use the Service for its intended purpose</li>
+                <li>Download and use the mobile application on your devices</li>
+            </ul>
+            
+            <p>This license does not permit you to:</p>
+            <ul>
+                <li>Copy, modify, or create derivative works of the Service</li>
+                <li>Distribute, sell, or sublicense the Service</li>
+                <li>Remove or alter any proprietary notices</li>
+            </ul>
+            
+            <h3>10.3 Trademarks</h3>
+            <p>"Timeki" and related logos are trademarks of Byond Bytes Pty Ltd. You may not use our trademarks without our prior written consent.</p>
+            
+            <h2>11. Third-Party Services and Links</h2>
+            <p>The Service may integrate with or contain links to third-party websites, applications, or services, including:</p>
+            <ul>
+                <li>Apple App Store and Google Play Store</li>
+                <li>Firebase services</li>
+                <li>Payment processors</li>
+            </ul>
+            
+            <p>We do not control these third-party services and are not responsible for their content, privacy practices, or terms. Your use of third-party services is subject to their respective terms and policies. We encourage you to review them before use.</p>
+            
+            <h2>12. Service Availability and Changes</h2>
+            
+            <h3>12.1 Availability</h3>
+            <p>We strive to provide reliable service but cannot guarantee that Timeki will be available at all times. The Service may be unavailable due to:</p>
+            <ul>
+                <li>Scheduled maintenance</li>
+                <li>Technical issues or system failures</li>
+                <li>Circumstances beyond our control</li>
+            </ul>
+            
+            <h3>12.2 Changes to Service</h3>
+            <p>We reserve the right to modify, suspend, or discontinue any aspect of the Service at any time, with or without notice. We may also impose limits on certain features or restrict access to parts of the Service.</p>
+            
+            <h3>12.3 Updates</h3>
+            <p>We may release updates, upgrades, or new versions of the Service. You may need to update the app to continue using it. Some updates may be required for security or functionality purposes.</p>
+            
+            <h2>13. Data Export and Portability</h2>
+            <p>You can export your time tracking data in CSV format at any time through the app. We recommend regularly exporting your data for your records. Upon account termination, you should export your data as we are not obligated to retain it indefinitely.</p>
+            
+            <h2>14. Suspension and Termination</h2>
+            
+            <h3>14.1 Termination by You</h3>
+            <p>You may stop using the Service at any time and cancel your subscription through your app store account. To delete your account and associated data, contact us at <a href="mailto:support@timeki.app">support@timeki.app</a>.</p>
+            
+            <h3>14.2 Termination by Us</h3>
+            <p>We may suspend or terminate your access to the Service immediately, without prior notice or liability, if:</p>
+            <ul>
+                <li>You breach these Terms</li>
+                <li>Your subscription payment fails and remains unpaid</li>
+                <li>You engage in fraudulent or illegal activity</li>
+                <li>We are required to do so by law</li>
+                <li>We discontinue the Service</li>
+            </ul>
+            
+            <h3>14.3 Effect of Termination</h3>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your right to use the Service ends immediately</li>
+                <li>Your subscription will not be refunded (unless required by law)</li>
+                <li>We may delete your account and data after a reasonable period</li>
+                <li>You remain liable for any fees owed before termination</li>
+            </ul>
+            
+            <p>Provisions that by their nature should survive termination will continue to apply, including ownership rights, disclaimers, indemnity, and limitation of liability.</p>
+            
+            <h2>15. Disclaimers and Warranties</h2>
+            
+            <h3>15.1 "As Is" Service</h3>
+            <p>The Service is provided "as is" and "as available" without warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including:</p>
+            <ul>
+                <li>Merchantability and fitness for a particular purpose</li>
+                <li>Non-infringement of third-party rights</li>
+                <li>Accuracy, reliability, or completeness of information</li>
+                <li>Uninterrupted or error-free operation</li>
+                <li>Security or freedom from viruses</li>
+            </ul>
+            
+            <h3>15.2 Limitation on Disclaimers</h3>
+            <p>Nothing in these Terms excludes, restricts, or modifies any consumer rights or guarantees that cannot be excluded under Australian Consumer Law, including the right to:</p>
+            <ul>
+                <li>Services provided with due care and skill</li>
+                <li>Services fit for any specified purpose</li>
+                <li>Services delivered within a reasonable time</li>
+            </ul>
+            
+            <h3>15.3 Use at Your Own Risk</h3>
+            <p>You use the Service at your sole risk. We do not warrant that:</p>
+            <ul>
+                <li>The Service will meet your specific requirements</li>
+                <li>Location tracking will be 100% accurate</li>
+                <li>Time tracking data will be error-free</li>
+                <li>The Service is suitable for compliance with all payroll regulations</li>
+            </ul>
+            
+            <p>You are responsible for verifying the accuracy of time entries and ensuring compliance with employment laws.</p>
+            
+            <h2>16. Limitation of Liability</h2>
+            
+            <h3>16.1 Limitation</h3>
+            <p>To the fullest extent permitted by law, Byond Bytes Pty Ltd, its directors, employees, and affiliates will not be liable for any indirect, incidental, special, consequential, or punitive damages, including:</p>
+            <ul>
+                <li>Loss of profits, revenue, or business opportunities</li>
+                <li>Loss of data or time entries</li>
+                <li>Loss of goodwill or reputation</li>
+                <li>Service interruptions or downtime</li>
+                <li>Errors in time calculations or payroll</li>
+                <li>Costs of substitute services</li>
+            </ul>
+            
+            <p>This applies regardless of the cause of action (contract, tort, negligence, or otherwise) and even if we have been advised of the possibility of such damages.</p>
+            
+            <h3>16.2 Maximum Liability</h3>
+            <p>Our total liability to you for all claims arising from your use of the Service will not exceed the amount you paid us in subscription fees during the twelve (12) months immediately preceding the claim, or AUD $100, whichever is greater.</p>
+            
+            <h3>16.3 Australian Consumer Law</h3>
+            <p>Nothing in these Terms excludes, restricts, or modifies any statutory rights you may have under Australian Consumer Law or other laws that cannot be excluded. Where our liability cannot be excluded, it is limited to the extent permitted by law.</p>
+            
+            <h2>17. Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold harmless Byond Bytes Pty Ltd, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or related to:</p>
+            <ul>
+                <li>Your use or misuse of the Service</li>
+                <li>Your Content and any data you submit</li>
+                <li>Your breach of these Terms</li>
+                <li>Your violation of any laws or third-party rights</li>
+                <li>Your employment practices or workplace policies</li>
+                <li>Disputes with your employees regarding time tracking or payroll</li>
+            </ul>
+            
+            <h2>18. Governing Law and Dispute Resolution</h2>
+            
+            <h3>18.1 Governing Law</h3>
+            <p>These Terms are governed by the laws of the State of Victoria, Australia, and the Commonwealth of Australia, without regard to conflict of law principles.</p>
+            
+            <h3>18.2 Jurisdiction</h3>
+            <p>You agree that any disputes arising from these Terms or the Service will be subject to the exclusive jurisdiction of the courts of Victoria, Australia.</p>
+            
+            <h3>18.3 Dispute Resolution</h3>
+            <p>Before initiating legal proceedings, we encourage you to contact us at <a href="mailto:support@timeki.app">support@timeki.app</a> to seek an informal resolution. Many disputes can be resolved quickly through good faith communication.</p>
+            
+            <h2>19. General Provisions</h2>
+            
+            <h3>19.1 Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Byond Bytes Pty Ltd regarding the Service and supersede all prior agreements and understandings.</p>
+            
+            <h3>19.2 Severability</h3>
+            <p>If any provision of these Terms is found to be invalid or unenforceable, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+            
+            <h3>19.3 No Waiver</h3>
+            <p>Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision. Any waiver must be in writing and signed by us.</p>
+            
+            <h3>19.4 Assignment</h3>
+            <p>You may not assign or transfer these Terms or your rights under them without our prior written consent. We may assign our rights and obligations without restriction.</p>
+            
+            <h3>19.5 Force Majeure</h3>
+            <p>We will not be liable for any failure or delay in performing our obligations due to causes beyond our reasonable control, including natural disasters, war, terrorism, pandemics, or internet/telecommunications failures.</p>
+            
+            <h2>20. Changes to These Terms</h2>
+            <p>We may update these Terms from time to time to reflect changes in our practices, the Service, or legal requirements. When we make significant changes, we will notify you by:</p>
+            <ul>
+                <li>Displaying a prominent notice within the app</li>
+                <li>Sending you an email notification</li>
+                <li>Updating the "Last updated" date at the top of these Terms</li>
+            </ul>
+            
+            <p>Your continued use of the Service after such changes constitutes your acceptance of the updated Terms. If you don't agree with the changes, you should stop using the Service and cancel your subscription.</p>
+            
+            <h2>21. Contact Us</h2>
+            <div class="contact-box">
+                <p><strong>If you have any questions about these Terms or the Service, please contact us:</strong></p>
+                
+                <p>
+                    <strong>Byond Bytes Pty Ltd</strong><br>
+                    Email: <a href="mailto:support@timeki.app">support@timeki.app</a><br>
+                    Website: <a href="https://timeki.app">timeki.app</a><br>
+                </p>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Important:</strong> These Terms contain important information about your legal rights, remedies, and obligations. Please read them carefully. By using Timeki, you agree to be bound by these Terms.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Byond Bytes Pty Ltd. All rights reserved.</p>
+        <p style="margin-top:8px;">
+            <a href="/">Home</a> |
+            <a href="/help.html">Help</a> |
+            <a href="/privacy.html">Privacy</a> |
+            <a href="/terms.html">Terms</a> |
+            <a href="/quickstartguide.html">Quick Start</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const isExpanded = nav.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnToggle = toggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
