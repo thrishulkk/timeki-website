@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free break time calculator to track work hours and breaks. Calculate total break time and net working hours. Perfect for ensuring labor law compliance.">
+    <meta name="author" content="Byond Bytes Pty Ltd">
+    <title>Free Break Time Calculator | Work Hours & Break Tracker – Timeki</title>
+    <link rel="icon" type="image/png" href="../../assets/images/timeki-logo.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Break Time Calculator",
+      "applicationCategory": "TimeTrackingApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "keywords": "break time calculator, lunch break calculator, work break tracker",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free break time calculator to track work hours and break times with labor law compliance features."
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EW48SDJ5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+     
+      gtag('config', 'G-0EW48SDJ5E');
+    </script>
+</head>
+<body>
+    <!-- Skip to Content for Accessibility -->
+    <a href="#calculator" class="skip-to-content">Skip to calculator</a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-container" aria-label="Timeki Home">
+                <img src="../../assets/images/timeki-logo.png" alt="Timeki Logo" class="logo-image">
+                <div class="logo-text">Timeki</div>
+            </a>
+            <nav role="navigation">
+                <a href="/#pricing">Pricing</a>
+                <a href="/#download">Download</a>
+                <a href="https://timeki.app/app/?source=break-time-calculator" class="nav-signup">Start Free Trial</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <h1>Free Break Time Calculator</h1>
+                <p class="intro-text">Calculate your total break time and net working hours instantly. Track lunch breaks, rest breaks, and ensure compliance with labor laws. Perfect for employees and employers tracking accurate work hours.</p>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="calculator-section">
+            <div class="container">
+                <div class="calculator-card">
+                    
+                    <!-- Work Hours Section -->
+                    <div class="calc-section">
+                        <h3 class="section-heading">Work Hours</h3>
+                        
+                        <div class="input-row">
+                            <fieldset class="time-fieldset">
+                                <legend>Start Time</legend>
+                                <div class="time-input-group">
+                                    <label for="startHour" class="sr-only">Start hour</label>
+                                    <input type="number" id="startHour" class="time-input" min="1" max="12" placeholder="HH" aria-label="Start hour">
+                                    <span class="time-separator">:</span>
+                                    <label for="startMinute" class="sr-only">Start minute</label>
+                                    <input type="number" id="startMinute" class="time-input" min="0" max="59" placeholder="MM" aria-label="Start minute">
+                                    <label for="startPeriod" class="sr-only">Start AM or PM</label>
+                                    <select id="startPeriod" class="period-select" aria-label="Start AM or PM">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="input-row">
+                            <fieldset class="time-fieldset">
+                                <legend>End Time</legend>
+                                <div class="time-input-group">
+                                    <label for="endHour" class="sr-only">End hour</label>
+                                    <input type="number" id="endHour" class="time-input" min="1" max="12" placeholder="HH" aria-label="End hour">
+                                    <span class="time-separator">:</span>
+                                    <label for="endMinute" class="sr-only">End minute</label>
+                                    <input type="number" id="endMinute" class="time-input" min="0" max="59" placeholder="MM" aria-label="End minute">
+                                    <label for="endPeriod" class="sr-only">End AM or PM</label>
+                                    <select id="endPeriod" class="period-select" aria-label="End AM or PM">
+                                        <option value="AM">AM</option>
+                                        <option value="PM" selected>PM</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- Breaks Section -->
+                    <div class="calc-section">
+                        <h3 class="section-heading">Breaks</h3>
+                        <p class="section-note">Enter break durations in minutes (e.g., 30 for a 30-minute lunch break)</p>
+                        
+                        <div id="breaks-container">
+                            <div class="break-row">
+                                <label for="break1">Break 1 (minutes)</label>
+                                <input type="number" id="break1" class="break-input" min="0" placeholder="30" data-break="1" aria-label="Break 1 duration in minutes">
+                            </div>
+                            <div class="break-row">
+                                <label for="break2">Break 2 (minutes)</label>
+                                <input type="number" id="break2" class="break-input" min="0" placeholder="15" data-break="2" aria-label="Break 2 duration in minutes">
+                            </div>
+                            <div class="break-row">
+                                <label for="break3">Break 3 (minutes)</label>
+                                <input type="number" id="break3" class="break-input" min="0" placeholder="0" data-break="3" aria-label="Break 3 duration in minutes">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-result-row">
+                        <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                        <button type="button" class="btn btn-secondary" id="clearBtn">Clear</button>
+                    </div>
+
+                    <!-- Results Display -->
+                    <div id="results" class="results-grid" style="display: none;">
+                        <div class="result-card">
+                            <div class="result-label">Total Work Hours</div>
+                            <div class="result-value" id="totalHours">0:00</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Total Break Time</div>
+                            <div class="result-value" id="totalBreaks">0:00</div>
+                        </div>
+                        <div class="result-card highlight">
+                            <div class="result-label">Net Working Hours</div>
+                            <div class="result-value large" id="netHours">0:00</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div id="cta-section" class="result-section" style="display: none;">
+                        <div class="cta-box">
+                            <h3>Track breaks automatically</h3>
+                            <p>Timeki logs break times with GPS verification, ensuring accurate payroll and labor law compliance for your team.</p>
+                            <a href="https://timeki.app/app/?source=break-time-calculator" class="btn btn-cta">Start Free Trial</a>
+                            <p class="cta-note">No credit card required · 30-day free trial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="content-section">
+            <div class="container content-narrow">
+                <h2>Break Time Calculator for Accurate Work Hours</h2>
+                <p>This free break time calculator helps employees and employers track work hours and break times accurately. Enter your start time, end time, and break durations to calculate total break time and net working hours. The calculator automatically accounts for lunch breaks and rest breaks, providing accurate totals for payroll processing and time tracking. Whether you're tracking a 30-minute lunch break or multiple short rest breaks throughout your shift, this tool ensures precise calculations every time.</p>
+
+                <h2>Lunch Break Calculator & Rest Break Tracker</h2>
+                <p>Managing lunch breaks and rest breaks is essential for labor law compliance and accurate payroll. This lunch break calculator lets you enter multiple break periods throughout your workday, from standard 30-minute meal breaks to shorter 10-15 minute rest breaks. The calculator totals all break time and subtracts it from your gross working hours to show your net productive time. This is particularly important for hourly workers, contractors, and field service employees who need to document their actual working time versus break time for accurate compensation.</p>
+
+                <h2>Work Break Calculator for Labor Law Compliance</h2>
+                <p>Labor laws in most states require specific meal and rest breaks based on hours worked. This work break calculator helps ensure compliance by clearly showing your total break time. Many states require a 30-minute meal break for shifts over 5-6 hours and 10-minute rest breaks every 4 hours. By accurately tracking all breaks with this calculator, you can verify that your breaks meet legal requirements and that your employer is providing the mandated rest periods. Proper break tracking protects both employees and employers from potential wage and hour disputes.</p>
+
+                <h2>Calculate Break Time for Accurate Payroll</h2>
+                <p>Accurate break time tracking is critical for payroll accuracy, especially when distinguishing between paid and unpaid breaks. When calculating employee wages, employers must subtract unpaid break time (typically meal breaks over 30 minutes) from total hours worked, while paid rest breaks (usually 10-15 minutes) remain part of compensable time. This break time calculator makes it easy to determine exactly how much time was spent on breaks versus productive work. Understanding the difference between paid vs unpaid breaks is essential for both hourly employees and payroll administrators to ensure correct compensation and compliance with wage and hour laws.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="copyright-year">2026</span> Byond Bytes Pty Ltd. All rights reserved.</p>
+            <p>
+                <a href="/">Home</a> |
+                <a href="/help.html">Help</a> |
+                <a href="/privacy.html">Privacy</a> |
+                <a href="/terms.html">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

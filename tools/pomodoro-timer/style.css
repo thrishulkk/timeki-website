@@ -26,24 +26,6 @@ body {
     max-width: 800px;
 }
 
-/* Skip to Content for Accessibility */
-.skip-to-content {
-    position: absolute;
-    left: -9999px;
-    z-index: 999;
-    background: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.skip-to-content:focus {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10px;
-}
-
 /* Header */
 header {
     background-color: #2c3e50;
@@ -136,39 +118,90 @@ nav a:hover, nav a:focus {
 
 /* Calculator Section */
 .calculator-section {
-    padding: 30px 20px;
+    padding: 25px 20px;
 }
 
 .calculator-card {
     background: white;
     border-radius: 12px;
-    padding: 30px;
+    padding: 25px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     max-width: 700px;
     margin: 0 auto;
 }
 
+/* Timer Display Section */
+.timer-display-section {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+}
+
+.timer-mode {
+    font-size: 1.2em;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.timer-clock {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+/* Session Stats */
+.session-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.stat-item {
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
 /* Calculator Sections */
 .calc-section {
-    margin-bottom: 30px;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
     border-bottom: 2px solid #e9ecef;
 }
 
 .calc-section:last-of-type {
     border-bottom: none;
+    margin-bottom: 20px;
 }
 
 .section-heading {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #2c3e50;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 /* Input Rows */
 .input-row {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .input-row label {
@@ -179,22 +212,9 @@ nav a:hover, nav a:focus {
     font-size: 0.95em;
 }
 
-.calc-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-.calc-input:focus {
-    outline: none;
-    border-color: #3498db;
-}
-
 .calc-select {
-    padding: 12px 15px;
+    width: 100%;
+    padding: 10px;
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 1em;
@@ -208,27 +228,19 @@ nav a:hover, nav a:focus {
     border-color: #3498db;
 }
 
-/* Threshold Group */
-.threshold-group {
+.checkbox-label {
     display: flex;
+    align-items: center;
     gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-.threshold-input {
-    flex: 1;
-}
-
-.calc-select {
-    flex: 0 0 120px;
-}
-
-/* Input Hint */
-.input-hint {
-    display: block;
-    font-size: 0.85em;
-    color: #666;
-    margin-top: 6px;
-    font-style: italic;
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
 /* Button and Result Row */
@@ -237,7 +249,7 @@ nav a:hover, nav a:focus {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
@@ -267,6 +279,13 @@ nav a:hover, nav a:focus {
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
+.btn-primary:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .btn-secondary {
     background-color: transparent;
     color: #3498db;
@@ -277,12 +296,9 @@ nav a:hover, nav a:focus {
     background-color: #f0f0f0;
 }
 
-/* Results Grid */
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 25px;
+/* Result Section */
+.result-section {
+    margin-top: 15px;
     animation: fadeIn 0.5s ease-in;
 }
 
@@ -291,74 +307,25 @@ nav a:hover, nav a:focus {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.result-card {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    border-left: 4px solid #3498db;
-}
-
-.result-card.highlight {
-    background: linear-gradient(135deg, #e8f4fd 0%, #d4e9f7 100%);
-    border-left: 4px solid #2980b9;
-}
-
-.result-label {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.result-value {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #2c3e50;
-}
-
-.result-value.large {
-    font-size: 2.2em;
-    color: #2980b9;
-}
-
-/* Result Section */
-.result-section {
-    margin-top: 20px;
-    animation: fadeIn 0.5s ease-in;
-}
-
 /* CTA Box */
 .cta-box {
     background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
-    padding: 25px 30px;
+    padding: 20px 25px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
 }
 
 .cta-box h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.3em;
+    margin-bottom: 8px;
     font-weight: 700;
 }
 
 .cta-box p {
-    font-size: 1em;
-    margin-bottom: 15px;
-    opacity: 0.95;
-}
-
-.cta-features {
-    list-style: none;
-    margin: 15px 0 20px;
-    padding: 0;
-}
-
-.cta-features li {
     font-size: 0.95em;
-    margin: 8px 0;
+    margin-bottom: 12px;
     opacity: 0.95;
 }
 
@@ -366,10 +333,10 @@ nav a:hover, nav a:focus {
     background-color: white;
     color: #3498db;
     border: 2px solid white;
-    padding: 16px 40px;
-    font-size: 1.15em;
+    padding: 14px 35px;
+    font-size: 1.1em;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .btn-cta:hover, .btn-cta:focus {
@@ -380,8 +347,8 @@ nav a:hover, nav a:focus {
 }
 
 .cta-note {
-    margin-top: 15px;
-    font-size: 0.9em;
+    margin-top: 12px;
+    font-size: 0.85em;
     opacity: 0.9;
 }
 
@@ -412,6 +379,19 @@ nav a:hover, nav a:focus {
     margin-bottom: 20px;
 }
 
+.content-section a {
+    color: #3498db;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.content-section a:hover,
+.content-section a:focus {
+    border-bottom-color: #3498db;
+}
+
 /* Footer */
 footer {
     background-color: #2c3e50;
@@ -419,7 +399,6 @@ footer {
     text-align: center;
     padding: 30px 20px;
     font-size: 0.9em;
-    margin-top: 20px;
 }
 
 footer p {
@@ -433,7 +412,7 @@ footer a {
 }
 
 footer a:hover, footer a:focus {
-    color: #3498db;
+    color: #667eea;
 }
 
 /* Mobile Responsive */
@@ -458,12 +437,8 @@ footer a:hover, footer a:focus {
         font-size: 1.2em;
     }
 
-    .threshold-group {
-        flex-direction: column;
-    }
-
-    .calc-select {
-        flex: 1 1 auto;
+    .timer-clock {
+        font-size: 3em;
     }
 
     .button-result-row {
@@ -476,16 +451,18 @@ footer a:hover, footer a:focus {
         padding: 12px 20px;
     }
 
-    .results-grid {
-        grid-template-columns: 1fr;
+    .session-stats {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 15px;
     }
 
-    .result-value {
-        font-size: 1.5em;
+    .content-section h2 {
+        font-size: 1.4em;
     }
 
-    .result-value.large {
-        font-size: 1.8em;
+    .content-section p {
+        font-size: 1em;
     }
 
     .cta-box {
@@ -498,29 +475,5 @@ footer a:hover, footer a:focus {
 
     .cta-box p {
         font-size: 1em;
-    }
-
-    .content-section h2 {
-        font-size: 1.4em;
-    }
-
-    .content-section p {
-        font-size: 1em;
-    }
-}
-
-/* Print Styles */
-@media print {
-    header, footer, .button-result-row, .cta-box {
-        display: none;
-    }
-
-    .calculator-card {
-        box-shadow: none;
-        padding: 20px;
-    }
-
-    .results-grid {
-        page-break-inside: avoid;
     }
 }

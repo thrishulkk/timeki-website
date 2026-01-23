@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Pomodoro Timer to boost focus and productivity. Use the Pomodoro Technique with 25-minute work sessions and breaks. No signup required.">
+    <meta name="author" content="Byond Bytes Pty Ltd">
+    <title>Free Pomodoro Timer Online | Focus & Productivity Tool – Timeki</title>
+    <link rel="icon" type="image/png" href="../../assets/images/timeki-logo.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Pomodoro Timer",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "keywords": "pomodoro timer, focus timer, productivity timer, pomodoro technique",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free online Pomodoro timer to help you focus and track productive work sessions."
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EW48SDJ5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+     
+      gtag('config', 'G-0EW48SDJ5E');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-container" aria-label="Timeki Home">
+                <img src="../../assets/images/timeki-logo.png" alt="Timeki Logo" class="logo-image">
+                <div class="logo-text">Timeki</div>
+            </a>
+            <nav role="navigation">
+                <a href="/#pricing">Pricing</a>
+                <a href="/#download">Download</a>
+                <a href="https://timeki.app/app/?source=pomodoro-timer" class="nav-signup">Start Free Trial</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <h1>Free Pomodoro Timer</h1>
+                <p class="intro-text">Boost focus and productivity with the Pomodoro Technique. Work in focused 25-minute sessions with automatic breaks. Track your focus sessions and easily turn them into real work activities.</p>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section id="timer" class="calculator-section">
+            <div class="container">
+                <div class="calculator-card">
+                    
+                    <!-- Timer Display -->
+                    <div class="timer-display-section">
+                        <div class="timer-mode" id="timerMode">Focus Time</div>
+                        <div class="timer-clock" id="timerClock" aria-live="polite" aria-atomic="true">25:00</div>
+                        
+                        <!-- Session Stats -->
+                        <div class="session-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Sessions Today:</span>
+                                <span class="stat-value" id="sessionsToday">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Focus Time:</span>
+                                <span class="stat-value" id="focusTime">0 min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timer Controls -->
+                    <div class="button-result-row">
+                        <button type="button" class="btn btn-primary" id="startBtn" aria-pressed="false">Start</button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+                    </div>
+
+                    <!-- Timer Settings -->
+                    <div class="calc-section">
+                        <h3 class="section-heading">Timer Settings</h3>
+                        
+                        <div class="input-row">
+                            <label for="focusDuration">Focus Duration</label>
+                            <select id="focusDuration" class="calc-select">
+                                <option value="25" selected>25 minutes (Classic Pomodoro)</option>
+                                <option value="50">50 minutes (Deep Work)</option>
+                                <option value="15">15 minutes (Quick Sprint)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-row">
+                            <label for="breakDuration">Break Duration</label>
+                            <select id="breakDuration" class="calc-select">
+                                <option value="5" selected>5 minutes (Short Break)</option>
+                                <option value="15">15 minutes (Long Break)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-row">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="soundToggle" checked>
+                                <span>Play sound when timer ends</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Smart CTA (shown after sessions) -->
+                    <div id="cta-section" class="result-section" style="display: none;">
+                        <div class="cta-box">
+                            <h3 id="ctaHeading">Great focus session!</h3>
+                            <p id="ctaText">You've completed 1 session. Want to track what you worked on?</p>
+                            <a href="https://timeki.app/app/?source=pomodoro-timer" class="btn btn-cta" id="ctaButton">Track Activity in Timeki</a>
+                            <p class="cta-note">No credit card required · Free forever for solo users</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content Section -->
+        <section class="content-section">
+            <div class="container content-narrow">
+                <h2>Free Online Pomodoro Timer for Focus</h2>
+                <p>This free Pomodoro timer helps you maintain focus through structured work sessions and breaks. The Pomodoro Technique uses 25-minute focused work intervals (called Pomodoros) followed by short 5-minute breaks. After completing four Pomodoros, take a longer 15-minute break to fully recharge. This time management method was created by Francesco Cirillo in the 1980s and has become one of the most effective productivity techniques for freelancers, developers, students, and knowledge workers who need to maintain deep focus.</p>
+
+                <h2>How to Use the Pomodoro Technique Timer</h2>
+                <p>Using this Pomodoro timer is simple and effective. Choose a task you want to focus on, click start, and work without distractions until the timer rings after 25 minutes. Take a 5-minute break to rest and recharge, then start another Pomodoro session. The timer automatically tracks your completed sessions and total focus time throughout the day. You can customize the focus duration for deep work sessions (50 minutes) or quick sprints (15 minutes), and adjust break lengths based on your preferences. Enable sound notifications to alert you when each session completes.</p>
+
+                <h2>Benefits of Using a Focus Timer</h2>
+                <p>A Pomodoro focus timer creates urgency that helps you overcome procrastination and maintain concentration. Breaking work into manageable 25-minute chunks makes large projects feel less overwhelming and more achievable. Regular breaks prevent mental fatigue and burnout while keeping your mind fresh throughout the day. The visible progress through completed sessions provides motivation and a sense of accomplishment. This productivity timer is particularly effective for remote workers, freelancers, and anyone who struggles with distractions or maintaining focus during work hours.</p>
+
+                <h2>Track Your Focused Work Sessions</h2>
+                <p>While the Pomodoro timer helps you focus, tracking what you accomplished during those sessions is equally important. After completing focused work sessions, you can record your activities, assign them to projects, and generate detailed reports of your productive time. This is especially valuable for freelancers who need to bill clients for work hours or teams that need to track project time. Transform your focused Pomodoro sessions into trackable, billable work with proper activity tracking and time management tools that complement the Pomodoro Technique.</p>
+                <p><strong>Focused work is powerful.</strong> Tracking it makes it valuable. <a href="https://timeki.app/app/?source=pomodoro-timer-content">Try activity tracking in Timeki</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="copyright-year">2026</span> Byond Bytes Pty Ltd. All rights reserved.</p>
+            <p>
+                <a href="/">Home</a> |
+                <a href="/help.html">Help</a> |
+                <a href="/privacy.html">Privacy</a> |
+                <a href="/terms.html">Terms</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
