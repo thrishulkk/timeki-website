@@ -363,29 +363,48 @@ section {
     color: #666;
 }
 
-.solo-callout {
-    background: #d4edda;
-    border-left: 4px solid #28a745;
-    padding: 25px;
-    border-radius: 6px;
-    max-width: 800px;
+/* ✅ NEW: Enterprise Callout */
+.enterprise-callout {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 900px;
     margin: 0 auto 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
-.solo-callout h3 {
-    color: #155724;
+.enterprise-callout h3 {
+    font-size: 1.5em;
     margin-bottom: 10px;
-    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.solo-callout p {
-    color: #155724;
-    margin: 0;
+.enterprise-callout p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.enterprise-callout .btn {
+    background: white;
+    color: #667eea;
+    border: 2px solid white;
+    font-weight: 700;
+}
+
+.enterprise-callout .btn:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
 }
 
 /* Pricing Table Styles */
 .pricing-table-wrapper {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow-x: auto;
     background: white;
@@ -407,7 +426,7 @@ section {
 .pricing-table thead th {
     padding: 30px 20px;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: 700;
     border-right: 1px solid rgba(255,255,255,0.1);
 }
@@ -417,9 +436,10 @@ section {
     border-right: none;
 }
 
-.team-header {
+/* ✅ NEW: Professional header styling */
+.professional-header {
     position: relative;
-    background: #3498db !important;
+    background: #10b981 !important;
 }
 
 .most-popular-badge {
@@ -463,7 +483,7 @@ section {
 }
 
 .featured-cell {
-    background: #f8fbff;
+    background: #f0fdf4;
     font-weight: 500;
 }
 
@@ -563,7 +583,7 @@ section {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .app-store-badge {
@@ -578,6 +598,17 @@ section {
 .app-store-badge img {
     height: 60px;
     width: auto;
+}
+
+.desktop-signin {
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.desktop-signin a {
+    color: white;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 /* Footer Separator */
@@ -690,26 +721,26 @@ footer a:hover, footer a:focus {
     }
 
     .pricing-table {
-        font-size: 0.85em;
+        font-size: 0.8em;
     }
 
     .pricing-table thead th {
-        padding: 20px 10px;
-        font-size: 1.1em;
+        padding: 20px 8px;
+        font-size: 1em;
     }
 
     .pricing-table tbody td {
-        padding: 15px 10px;
+        padding: 12px 8px;
     }
 
     .feature-label {
-        min-width: 120px;
-        font-size: 0.9em;
+        min-width: 100px;
+        font-size: 0.85em;
     }
 
     .most-popular-badge {
-        font-size: 0.45em;
-        right: 10px;
+        font-size: 0.4em;
+        right: 8px;
         top: 5px;
         padding: 3px 8px;
     }
@@ -719,8 +750,16 @@ footer a:hover, footer a:focus {
         font-size: 0.85em;
     }
 
-    .solo-callout {
-        padding: 20px;
+    .enterprise-callout {
+        padding: 25px 20px;
+    }
+
+    .enterprise-callout h3 {
+        font-size: 1.2em;
+    }
+
+    .enterprise-callout p {
+        font-size: 0.95em;
     }
 }
 
@@ -737,15 +776,15 @@ footer a:hover, footer a:focus {
     <header>
         <div class="header-content">
             <a href="/" class="logo-container" aria-label="Timeki Home">
-                <img src="assets/images/timeki-logo.png"" alt="Timeki Logo" class="logo-image">
+                <img src="assets/images/timeki-logo.png" alt="Timeki Logo" class="logo-image">
                 <div class="logo-text">Timeki</div>
             </a>
             <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
             <nav id="mainNav" role="navigation">
                 <a href="#pricing">Pricing</a>
                 <a href="#download">Download</a>
-                <a href="https://timeki.app/app/" class="nav-signup">Sign Up</a>
-                <a href="https://timeki.app/app/">Sign In</a>
+                <a href="https://timeki.app/app" class="nav-signup">Sign Up</a>
+                <a href="https://timeki.app/app">Sign In</a>
             </nav>
         </div>
     </header>
@@ -755,7 +794,7 @@ footer a:hover, footer a:focus {
                 <h1>Stop Chasing Timesheets.<br>Save Hours Every Week.</h1>
                 <p class="subtitle">GPS-verified time tracking for construction crews, cleaning teams, auto garages, and field service businesses. Export payroll in seconds.</p>
                 <div class="cta-buttons">
-                    <a href="https://timeki.app/app/" class="btn btn-primary">Start Free Trial</a>
+                    <a href="https://timeki.app/app" class="btn btn-primary">Start Free Trial</a>
                     <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
                 </div>
                 <p class="trust-line">No credit card required · 30-day free trial · Cancel anytime</p>
@@ -809,12 +848,16 @@ footer a:hover, footer a:focus {
                         <p>Employees can only clock in when they're on-site. Set custom radius for each job site.</p>
                     </div>
                     <div class="feature">
+                        <h3><span class="feature-icon" aria-hidden="true">✓</span> Project & Activity Tracking</h3>
+                        <p>Track time by project and activity. Know exactly where every hour goes for accurate job costing.</p>
+                    </div>
+                    <div class="feature">
                         <h3><span class="feature-icon" aria-hidden="true">✓</span> Live Status Tracking</h3>
                         <p>See who's punched in and out in real-time. Know exactly who's working where, instantly.</p>
                     </div>
                     <div class="feature">
-                        <h3><span class="feature-icon" aria-hidden="true">✓</span> Manager Punch In/Out</h3>
-                        <p>Managers can clock in/out employees remotely when needed. Perfect for handling missed punches or corrections.</p>
+                        <h3><span class="feature-icon" aria-hidden="true">✓</span> Manager Punch Out</h3>
+                        <p>Managers can punch out employees remotely when needed. Perfect for handling missed punch-outs or end-of-day corrections.</p>
                     </div>
                     <div class="feature">
                         <h3><span class="feature-icon" aria-hidden="true">✓</span> Review & Approve Timesheets</h3>
@@ -837,36 +880,38 @@ footer a:hover, footer a:focus {
                         <p>Create and assign shifts. Your team sees their schedule in the app.</p>
                     </div>
                     <div class="feature">
-                        <h3><span class="feature-icon" aria-hidden="true">✓</span> Unlimited Employees</h3>
-                        <p>One flat fee on Team Plan. Add as many employees as you need.</p>
+                        <h3><span class="feature-icon" aria-hidden="true">✓</span> Unlimited Job Sites</h3>
+                        <p>Track time at as many locations as you need. No artificial limits.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing -->
+        <!-- ✅ UPDATED: Pricing Section -->
         <section id="pricing" class="pricing">
             <div class="container">
-                <h2 class="section-title">Simple Pricing That Scales With You</h2>
-                <p class="pricing-intro"><strong>One flat price for your entire team.</strong> No per-user fees. Add 5 or 50 employees — price stays the same.</p>
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="pricing-intro"><strong>Choose the plan that fits your team.</strong> All plans include GPS tracking, geofencing, and unlimited job sites.</p>
                 
-                <!-- Solo User Callout -->
-                <div class="solo-callout">
-                    <h3>💡 Full Features for Solo Users</h3>
-                    <p>We don't restrict any features for solos. Experience everything Timeki offers so you can see how it helps you grow. Most solos upgrade within 60 days after seeing the value.</p>
+                <!-- ✅ NEW: Enterprise Callout -->
+                <div class="enterprise-callout">
+                    <h3>🏢 Need 50+ users?</h3>
+                    <p>Contact us for custom Enterprise pricing with dedicated support, advanced features, and flexible terms.</p>
+                    <a href="mailto:support@timeki.app?subject=Enterprise%20Inquiry" class="btn">Contact Sales</a>
                 </div>
 
-                <!-- Pricing Table -->
+                <!-- ✅ UPDATED: Pricing Table -->
                 <div class="pricing-table-wrapper">
                     <table class="pricing-table">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Solo Plan</th>
-                                <th class="team-header">
+                                <th>Essential</th>
+                                <th class="professional-header">
                                     <div class="most-popular-badge">⭐ Most Popular</div>
-                                    Team Plan
+                                    Professional
                                 </th>
+                                <th>Business</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -874,28 +919,36 @@ footer a:hover, footer a:focus {
                             <tr>
                                 <td class="feature-label">Price</td>
                                 <td class="price-cell">
-                                    <div class="price-amount">$4.99</div>
-                                    <div class="price-period">USD per month</div>
+                                    <div class="price-amount">$14.99</div>
+                                    <div class="price-period">USD per month<br>or $149 USD / year</div>
+                                    <div class="save-badge">Save $30 yearly</div>
                                 </td>
                                 <td class="price-cell featured-cell">
                                     <div class="price-amount">$29.99</div>
                                     <div class="price-period">USD per month<br>or $299 USD / year</div>
-                                    <div class="save-badge">Save 2 months yearly</div>
+                                    <div class="save-badge">Save $60 yearly</div>
+                                </td>
+                                <td class="price-cell">
+                                    <div class="price-amount">$59.99</div>
+                                    <div class="price-period">USD per month<br>or $599 USD / year</div>
+                                    <div class="save-badge">Save $120 yearly</div>
                                 </td>
                             </tr>
 
                             <!-- Who it's for -->
                             <tr>
-                                <td class="feature-label">Who it's for</td>
-                                <td>Solo tradies, contractors</td>
-                                <td class="featured-cell">Small & growing teams</td>
+                                <td class="feature-label">Best For</td>
+                                <td>Small teams & solos</td>
+                                <td class="featured-cell">Growing businesses</td>
+                                <td>Larger operations</td>
                             </tr>
 
                             <!-- Users Included -->
                             <tr>
-                                <td class="feature-label">Users Included</td>
-                                <td>1 user</td>
-                                <td class="featured-cell">Unlimited users</td>
+                                <td class="feature-label">Team Members</td>
+                                <td>Up to 5 users</td>
+                                <td class="featured-cell">Up to 20 users</td>
+                                <td>Up to 50 users</td>
                             </tr>
 
                             <!-- GPS Punch -->
@@ -903,34 +956,55 @@ footer a:hover, footer a:focus {
                                 <td class="feature-label">GPS Punch In/Out</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
+                            </tr>
+
+                            <!-- Job Sites -->
+                            <tr>
+                                <td class="feature-label">Job Sites</td>
+                                <td>Unlimited</td>
+                                <td class="featured-cell">Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+
+                            <!-- Geofencing -->
+                            <tr>
+                                <td class="feature-label">Geofencing Alerts</td>
+                                <td>✔️</td>
+                                <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
+                            </tr>
+
+                            <!-- Project Tracking -->
+                            <tr>
+                                <td class="feature-label">Project Tracking</td>
+                                <td>✔️</td>
+                                <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
+                            </tr>
+
+                            <!-- Activity Tracking -->
+                            <tr>
+                                <td class="feature-label">Activity Tracking</td>
+                                <td>✔️</td>
+                                <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Live Status Tracking -->
                             <tr>
                                 <td class="feature-label">Live Status Tracking</td>
-                                <td>✔️ (self only)</td>
-                                <td class="featured-cell">✔️ (whole team)</td>
-                            </tr>
-
-                            <!-- Manager Punch In/Out -->
-                            <tr>
-                                <td class="feature-label">Manager Punch In/Out</td>
-                                <td>✔️ (self)</td>
-                                <td class="featured-cell">✔️ (team)</td>
+                                <td>✔️</td>
+                                <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Review & Approve Timesheets -->
                             <tr>
                                 <td class="feature-label">Review & Approve</td>
-                                <td>✔️ (self)</td>
-                                <td class="featured-cell">✔️ (team)</td>
-                            </tr>
-
-                            <!-- Admin Dashboard -->
-                            <tr>
-                                <td class="feature-label">Admin Dashboard</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Reports -->
@@ -938,6 +1012,7 @@ footer a:hover, footer a:focus {
                                 <td class="feature-label">Reports & Exports</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Scheduling -->
@@ -945,6 +1020,7 @@ footer a:hover, footer a:focus {
                                 <td class="feature-label">Shift Scheduling</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Offline Mode -->
@@ -952,6 +1028,7 @@ footer a:hover, footer a:focus {
                                 <td class="feature-label">Offline Mode</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
                             <!-- Break Tracking -->
@@ -959,27 +1036,30 @@ footer a:hover, footer a:focus {
                                 <td class="feature-label">Break Tracking</td>
                                 <td>✔️</td>
                                 <td class="featured-cell">✔️</td>
+                                <td>✔️</td>
                             </tr>
 
-                            <!-- Per-user fees -->
+                            <!-- Support -->
                             <tr>
-                                <td class="feature-label">Per-User Fees</td>
-                                <td>❌ Never</td>
-                                <td class="featured-cell">❌ Never</td>
+                                <td class="feature-label">Support</td>
+                                <td>Email support</td>
+                                <td class="featured-cell">Priority email</td>
+                                <td>Phone + Email + Dedicated account manager</td>
                             </tr>
 
                             <!-- Buttons -->
                             <tr>
                                 <td class="feature-label"></td>
-                                <td><a href="https://timeki.app/app/" class="btn btn-secondary btn-small">Start Free Trial</a></td>
-                                <td class="featured-cell"><a href="https://timeki.app/app/" class="btn btn-primary btn-small">Start Free Trial</a></td>
+                                <td><a href="https://timeki.app/app" class="btn btn-secondary btn-small">Start Essential</a></td>
+                                <td class="featured-cell"><a href="https://timeki.app/app" class="btn btn-primary btn-small">Start Professional</a></td>
+                                <td><a href="https://timeki.app/app" class="btn btn-secondary btn-small">Start Business</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <p class="pricing-note">
-                    All prices are shown in USD and exclude taxes. Your exact local price (e.g., AUD for Australia) will appear automatically inside the app.
+                    All prices are shown in USD and exclude taxes. Your exact local price (e.g., AUD for Australia) will appear automatically inside the app. All plans include a 30-day free trial.
                 </p>
             </div>
         </section>
@@ -992,7 +1072,7 @@ footer a:hover, footer a:focus {
                 <div class="download-cta-section">
                     <p><strong>New here?</strong> Sign up for a free trial now — it's quick and easy!</p>
                     <div class="cta-section-buttons">
-                        <a href="https://timeki.app/app/" class="btn btn-white">Start Free Trial</a>
+                        <a href="https://timeki.app/app" class="btn btn-white">Start Free Trial</a>
                     </div>
                     <p style="margin-top: 15px; opacity: 0.9; font-size: 0.95em;">
                         No credit card required · 30-day free trial · Cancel anytime
@@ -1003,7 +1083,7 @@ footer a:hover, footer a:focus {
                 <div class="download-cta-section">
                     <p>Already have an account? Sign in here.</p>
                     <div class="cta-section-buttons">
-                        <a href="https://timeki.app/app/" class="btn btn-outline-white">Sign In</a>
+                        <a href="https://timeki.app/app" class="btn btn-outline-white">Sign In</a>
                     </div>
                 </div>
 
