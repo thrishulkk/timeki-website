@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Timeki Practice — understand the true cost of every client, matter, and team member. Internal time cost management for accounting firms.">
+    <meta name="keywords" content="accounting firm time tracking, practice management, staff cost tracking, timesheet approval, accounting practice software">
+    <meta name="author" content="Byond Bytes Pty Ltd">
+    <title>Timeki Practice — Know the True Cost of Your Practice</title>
+    <link rel="icon" type="image/png" href="assets/images/timeki-logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EW48SDJ5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0EW48SDJ5E');
+    </script>
+
+    <style>
+/* ── Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #1E293B;
+    background-color: #F8FAFC;
+}
+
+/* ── AppTheme tokens ── */
+/* primaryBlue:       #3B82F6  */
+/* successGreen:      #10B981  */
+/* warningOrange:     #F59E0B  */
+/* backgroundGray:    #F8FAFC  */
+/* cardWhite:         #FFFFFF  */
+/* textPrimary:       #1E293B  */
+/* textSecondary:     #64748B  */
+/* textTertiary:      #94A3B8  */
+/* borderGray:        #E2E8F0  */
+/* infoBlueBg:        #F0F9FF  */
+/* warningYellowBg:   #FEF3C7  */
+/* practiceNavBg:     #0F172A  */
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Header (matches PracticeShell sidebar: #0F172A) ── */
+header {
+    background-color: #0F172A;
+    color: white;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.logo-image { width: 36px; height: 36px; }
+.logo-text { font-size: 1.6em; font-weight: 700; color: white; }
+.logo-badge {
+    font-size: 0.55em;
+    font-weight: 700;
+    background: #3B82F6;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 4px;
+    vertical-align: middle;
+    letter-spacing: 0.03em;
+}
+nav { display: flex; gap: 28px; align-items: center; }
+nav a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+nav a:hover { color: white; }
+.nav-cta {
+    background-color: #3B82F6;
+    color: white !important;
+    padding: 9px 20px;
+    border-radius: 28px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background 0.2s, transform 0.1s;
+}
+.nav-cta:hover { background-color: #2563EB !important; transform: translateY(-1px); }
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(150deg, #0F172A 0%, #1e3a5f 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px 72px;
+}
+.hero-badge {
+    display: inline-block;
+    background: rgba(59,130,246,0.15);
+    color: #93C5FD;
+    border: 1px solid rgba(59,130,246,0.35);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.hero h1 {
+    font-size: 2.9em;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: white;
+}
+.hero h1 span { color: #60A5FA; }
+.hero .subtitle {
+    font-size: 1.15em;
+    color: #94A3B8;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 28px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.btn-primary { background: #3B82F6; color: white; border-color: #3B82F6; }
+.btn-primary:hover {
+    background: #2563EB;
+    border-color: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+}
+.btn-outline { background: transparent; color: #93C5FD; border-color: rgba(59,130,246,0.4); }
+.btn-outline:hover { background: rgba(59,130,246,0.1); border-color: #3B82F6; }
+.trial-note {
+    margin-top: 18px;
+    color: #10B981;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* ── Trust bar ── */
+.trust-bar {
+    background: white;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 16px 20px;
+    text-align: center;
+}
+.trust-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: #64748B;
+    font-size: 0.87em;
+    font-weight: 500;
+}
+.trust-items span { display: flex; align-items: center; gap: 7px; }
+
+/* ── Sections ── */
+section { padding: 68px 20px; }
+.section-bg-white { background: white; }
+.section-bg-gray { background: #F8FAFC; }
+.section-label {
+    display: inline-block;
+    color: #3B82F6;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.section-title {
+    font-size: 2.1em;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+.section-subtitle {
+    font-size: 1.05em;
+    color: #64748B;
+    max-width: 580px;
+}
+.section-header { margin-bottom: 48px; }
+
+/* ── Feature cards (match AppTheme.cardDecoration) ── */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.feature-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    transform: translateY(-2px);
+}
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    background: #F0F9FF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    margin-bottom: 14px;
+}
+.feature-card h3 {
+    font-size: 1.02em;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 8px;
+}
+.feature-card p { color: #64748B; font-size: 0.93em; line-height: 1.65; }
+
+/* ── Dark callout (matches practice shell sidebar dark) ── */
+.dark-callout {
+    background: #0F172A;
+    border-radius: 16px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+.dark-callout h2 {
+    font-size: 1.85em;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+.dark-callout .label { color: #60A5FA; }
+.dark-callout p { color: #94A3B8; line-height: 1.7; }
+.check-list { list-style: none; margin-top: 22px; }
+.check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #CBD5E1;
+    font-size: 0.93em;
+}
+.check-list li::before {
+    content: "✓";
+    color: #3B82F6;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+.stat-number { font-size: 1.9em; font-weight: 800; color: #60A5FA; }
+.stat-label { font-size: 0.77em; color: #94A3B8; margin-top: 4px; }
+
+/* ── Steps ── */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 28px; }
+.step { text-align: center; }
+.step-number {
+    width: 44px;
+    height: 44px;
+    background: #3B82F6;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+.step h3 { font-size: 1em; font-weight: 700; color: #1E293B; margin-bottom: 8px; }
+.step p { color: #64748B; font-size: 0.88em; line-height: 1.6; }
+
+/* ── Pricing notice (matches warningYellowBg / warningOrange) ── */
+.pricing-notice {
+    background: #FEF3C7;
+    border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+.pricing-notice .notice-icon { font-size: 1.8em; flex-shrink: 0; }
+.pricing-notice h3 {
+    font-size: 1em;
+    font-weight: 700;
+    color: #92400E;
+    margin-bottom: 6px;
+}
+.pricing-notice p { color: #78350F; font-size: 0.9em; line-height: 1.6; }
+
+/* ── Final CTA ── */
+.final-cta {
+    background: linear-gradient(150deg, #1e3a5f 0%, #0F172A 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+.final-cta h2 {
+    font-size: 2.3em;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 14px;
+}
+.final-cta p {
+    color: #94A3B8;
+    font-size: 1.1em;
+    margin-bottom: 36px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.final-note { color: #10B981; font-size: 0.9em; font-weight: 600; margin-top: 16px; }
+
+/* ── Footer ── */
+.footer-separator { height: 1px; background: #E2E8F0; }
+footer {
+    background: #1E293B;
+    color: #64748B;
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.88em;
+}
+footer p { margin-bottom: 6px; }
+footer a { color: #64748B; text-decoration: none; }
+footer a:hover { color: #94A3B8; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2em; }
+    .section-title { font-size: 1.65em; }
+    .dark-callout { grid-template-columns: 1fr; padding: 28px 22px; }
+    .trust-items { gap: 18px; }
+    nav { display: none; }
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: #0F172A;
+        padding: 20px;
+        gap: 14px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-menu-toggle { display: block; }
+    .pricing-notice { flex-direction: column; }
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="/" class="logo-container" aria-label="Timeki home">
+            <img src="assets/images/timeki-logo.png" alt="Timeki" class="logo-image">
+            <span class="logo-text">Timeki<span class="logo-badge">Practice</span></span>
+        </a>
+        <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav id="mainNav" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="mailto:support@timeki.app">Contact</a>
+            <a href="https://timeki.app/app?signup=practice" class="nav-cta">Get Started Free</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- ── Hero ── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">For Accounting &amp; Professional Services Firms</div>
+            <h1>Know the <span>true cost</span><br>of your practice</h1>
+            <p class="subtitle">
+                Track staff time by client and service. Understand your capacity.
+                Approve weekly timesheets. See exactly where your practice hours — and money — are going.
+            </p>
+            <div class="cta-group">
+                <a href="https://timeki.app/app?signup=practice" class="btn btn-primary">Start Free Trial</a>
+                <a href="mailto:support@timeki.app?subject=Timeki Practice Demo" class="btn btn-outline">Request a Demo</a>
+            </div>
+            <p class="trial-note">30-day free trial &nbsp;&middot;&nbsp; No credit card required &nbsp;&middot;&nbsp; Web-based, nothing to install</p>
+        </div>
+    </section>
+
+    <!-- ── Trust bar ── -->
+    <div class="trust-bar">
+        <div class="trust-items">
+            <span>&#128274; Data isolated per firm</span>
+            <span>&#128202; Real-time cost reports</span>
+            <span>&#9989; Week approval workflow</span>
+            <span>&#128228; CSV &amp; PDF export</span>
+            <span>&#127760; Works in any browser</span>
+        </div>
+    </div>
+
+    <!-- ── Features ── -->
+    <section id="features" class="section-bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Features</div>
+                <h2 class="section-title">Built for accounting practices,<br>not adapted from a field-service app</h2>
+                <p class="section-subtitle">Every feature is designed around internal cost visibility — not GPS punch-in, not client billing.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9200;</div>
+                    <h3>Weekly Time Log</h3>
+                    <p>Staff enter start and end times per client and service. Duration is auto-calculated, rounded to the nearest quarter-hour. No double-entry, no spreadsheets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128200;</div>
+                    <h3>Capacity &amp; Cost Analytics</h3>
+                    <p>See total cost by employee, client, and service type. Drill down from team to individual or from client to task. Know at a glance where your practice spends its hours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9989;</div>
+                    <h3>Timesheet Approval Workflow</h3>
+                    <p>Staff submit their full week for manager review. Managers approve or reject with one click. Approved timesheets are locked — entries can't be edited retroactively without re-opening.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128101;</div>
+                    <h3>Team &amp; Client Management</h3>
+                    <p>Set an hourly cost rate per staff member. Manage your client list and service types directly in the app. Invite team members via a shareable link — no IT setup.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128228;</div>
+                    <h3>CSV &amp; PDF Export</h3>
+                    <p>Export cost reports by employee, client, or service for any date range. Download as a formatted PDF or raw CSV for your own tools — no data lock-in.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128274;</div>
+                    <h3>Manager &amp; Staff Roles</h3>
+                    <p>Managers see the full team view and can approve, reject, or edit any timesheet. Staff see only their own entries. Role separation is enforced at the database level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Dark callout: Cost visibility ── -->
+    <section class="section-bg-white">
+        <div class="container">
+            <div class="dark-callout">
+                <div>
+                    <div class="section-label label">Cost Visibility</div>
+                    <h2>Internal cost &mdash; not client billing</h2>
+                    <p>Timeki Practice answers one question: <em>what does it cost your practice to serve each client?</em> This is your internal staff cost — not what you bill.</p>
+                    <ul class="check-list">
+                        <li>Cost = hours &times; staff hourly cost rate (set per employee)</li>
+                        <li>Drill-down views: Employee &rarr; Client &rarr; Service &bull; Client &rarr; Service &rarr; Employee &bull; Service &rarr; Employee &rarr; Client</li>
+                        <li>Filter by week, month, financial year, or custom date range</li>
+                        <li>6 KPI cards: total hours, total cost, active clients, active staff, avg cost/client, avg hrs/staff</li>
+                    </ul>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Drill-down views</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">KPI cards</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">&frac14; hr</div>
+                        <div class="stat-label">Time rounding</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">CSV+PDF</div>
+                        <div class="stat-label">Export formats</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── How it works ── -->
+    <section id="how-it-works" class="section-bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Getting Started</div>
+                <h2 class="section-title">Up and running in minutes</h2>
+                <p class="section-subtitle">No installation, no IT ticket, no training day. Your whole team on the same page by end of day.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create your practice</h3>
+                    <p>Sign up free. Add your clients and services in the Business Hub — takes under 5 minutes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Invite your team</h3>
+                    <p>Copy a web invite link for each staff member. Set their hourly cost rate and role (Employee or Manager).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Log time daily</h3>
+                    <p>Staff enter start and end times, pick a client and service. Under 2 minutes per day per person.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Submit &amp; approve</h3>
+                    <p>Staff submit their week. Managers approve or reject. Cost reports update in real time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Pricing notice ── -->
+    <section class="section-bg-white">
+        <div class="container" style="text-align: center;">
+            <div class="section-label">Pricing</div>
+            <h2 class="section-title">Practice plans coming soon</h2>
+            <p class="section-subtitle" style="margin: 0 auto 40px;">
+                Pricing for accounting practices is being finalised. Start your free trial today —
+                you will be notified when plans are available and will not be charged without your consent.
+            </p>
+            <div class="pricing-notice">
+                <div class="notice-icon">&#128336;</div>
+                <div>
+                    <h3>Free during early access</h3>
+                    <p>Timeki Practice is free to use while we finalise pricing for accounting firms. Your data and settings are preserved when paid plans launch — nothing changes for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to see your practice's true cost?</h2>
+            <p>Join accounting firms already using Timeki Practice to understand where their hours and money are going.</p>
+            <div class="cta-group">
+                <a href="https://timeki.app/app?signup=practice" class="btn btn-primary">Start Free Trial</a>
+                <a href="mailto:support@timeki.app?subject=Timeki Practice" class="btn btn-outline">Talk to Us</a>
+            </div>
+            <p class="final-note">30-day free trial &nbsp;&middot;&nbsp; No credit card &nbsp;&middot;&nbsp; Web-based</p>
+        </div>
+    </section>
+</main>
+
+<div class="footer-separator"></div>
+<footer>
+    <p>&copy; <span id="copyright-year">2026</span> Byond Bytes Pty Ltd. All rights reserved.</p>
+    <p>
+        <a href="/">Home</a> |
+        <a href="/practice.html">Practice</a> |
+        <a href="/help.html">Help</a> |
+        <a href="/privacy.html">Privacy</a> |
+        <a href="/terms.html">Terms</a>
+    </p>
+</footer>
+
+<script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+        const nav = document.getElementById('mainNav');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const isExpanded = nav.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', isExpanded);
+    }
+
+    document.addEventListener('click', function(e) {
+        const nav = document.getElementById('mainNav');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        if (!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+</body>
+</html>
